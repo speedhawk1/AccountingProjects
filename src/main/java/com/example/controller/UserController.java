@@ -40,7 +40,7 @@ public class UserController extends BaseController {
                 return "redirect:/admin.jsp";
             }
             if (user.getRole().equals("user")) {
-                return "redirect:/user.jsp";
+                return "redirect:/projectsrecorder/list.jsp";
             }
             return "redirect:/index.jsp";
         } else {
