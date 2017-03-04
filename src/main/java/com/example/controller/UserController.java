@@ -34,13 +34,14 @@ public class UserController extends BaseController {
     @RequestMapping("login")
     private String login(User user) {
         user = userService.login(user);
+        // check name and password;
         if (user != null) {
             getSession().setAttribute("user", user);
             if (user.getRole().equals("admin")) {
                 return "redirect:/admin.jsp";
             }
             if (user.getRole().equals("user")) {
-                return "redirect:/projectsrecorder/list.jsp";
+                return "redirect:/user.jsp";
             }
             return "redirect:/index.jsp";
         } else {

@@ -9,6 +9,7 @@
 </c:if>
 <h1>user page</h1>
 user: ${sessionScope.user.username}<br/>
-<a href="${ctx}/user/logout">LOG OUT</a>
+<a href="${ctx}projectsrecorder/list">Enter the project page</a>
+<a href="${ctx}user/logout">LOG OUT</a>
 </body>
 </html>

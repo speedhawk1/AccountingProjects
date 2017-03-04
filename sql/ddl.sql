@@ -26,11 +26,11 @@ CREATE TABLE exam.projects_recorder(
   project VARCHAR(255) UNIQUE COMMENT 'project',
   startTime VARCHAR(15) COMMENT 'startTime',
   endTime VARCHAR(15) COMMENT 'endTime',
-  scales DECIMAL COMMENT 'scales',
+  scales DECIMAL(65) COMMENT 'scales',
   accountant VARCHAR(11) COMMENT 'accountant'
 );
 
-INSERT INTO exam.projects_recorder VALUE (NULL,'调试者1号','2017-2-23','2027-2-23',50000.00,'xiaohj');
+INSERT INTO exam.projects_recorder VALUE (NULL,'test1','2017-2-23','2027-2-23',50000.00,'xiaohj');
 
 # DELETE FROM exam.projects_recorder WHERE id=1;
 SELECT * FROM exam.projects_recorder;
