@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="projectsrecorder">
+    <insert id="add" parameterType="projectsrecorder" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO exam.projects_recorder
+        VALUES (
+                NULL,
+    #{project},
+    #{startTime}, 
+    #{endTime}, 
+    #{scales},
+    #{accountant}
+        );
+    </insert>
+    <delete id="remove">
+        DELETE FROM exam.projects_recorder
+        WHERE projects_recorder.id = #{id}
+    </delete>
+    <update id="modify">
+        UPDATE exam.projects_recorder
+        SET
+    project = #{project},
+    startTime = #{startTime}, 
+    endTime = #{endTime}, 
+    scales = #{scales},
+    accountant = #{accountant}
+        WHERE projects_recorder.id = #{id}
+    </update>
+    <select id="list" resultType="projectsrecorder">
+        SELECT *
+        FROM exam.projects_recorder
+        ORDER BY id
+    </select>
+    <select id="query" parameterType="projectsrecorder" resultType="projectsrecorder">
+        SELECT *
+        FROM exam.projects_recorder
+        <where>
+            <if test="id != null and id != ''">
+            projects_recorder.id = #{id}
+            </if>
+            <if test="name != null and name != ''"> AND name LIKE "%"#{name}"%"</if>
+            <if test="startTime != null and startTime != ''"> AND startTime LIKE "%"#{startTime}"%"</if>
+            <if test="endTime != null and endTime != ''"> AND endTime LIKE "%"#{endTime}"%"</if>
+            <if test="scale != null and scale != ''"> AND scale LIKE "%"#{scale}"%"</if>
+            <if test="accountant != null and accountant != ''"> AND accountant LIKE "%"#{accountant}"%"</if>
+        </where>
+    </select>
+    <select id="search" resultType="projectsrecorder">
+        SELECT *
+        FROM exam.projects_recorder
+        WHERE projects_recorder.id = #{id}
+    </select>
+</mapper>

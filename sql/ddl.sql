@@ -15,7 +15,7 @@ CREATE TABLE exam.user (
 )
   COMMENT '用户表';
 
-INSERT INTO exam.user VALUES (NULL, 'a', 'a', 'admin');
+INSERT INTO exam.user VALUES (NULL, 'xiaohj', '111111', DEFAULT );
 
 SELECT *
 FROM exam.user;
@@ -26,7 +26,7 @@ CREATE TABLE exam.projects_recorder(
   project VARCHAR(255) UNIQUE COMMENT 'project',
   startTime VARCHAR(15) COMMENT 'startTime',
   endTime VARCHAR(15) COMMENT 'endTime',
-  scales DECIMAL(65) COMMENT 'scales',
+  scales DECIMAL(15,2) COMMENT 'scales',
   accountant VARCHAR(11) COMMENT 'accountant'
 );
 
