@@ -5,7 +5,7 @@
         <title>projectsRecorder edit page</title>
     </head>
     <body>
-        <h1>EDIT ProjectsRecorder</h1>
+        <h1>请修改您的项目数据</h1>
         <form action="${ctx}/projectsrecorder/modify" method="post">
             <input type="hidden" name="id" value="${sessionScope.projectsrecorder.id}">
             PROJECT: <input name="project" value="${sessionScope.projectsrecorder.project}"><br>

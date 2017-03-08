@@ -11,7 +11,12 @@
             <input name="startTime" placeholder="STARTTIME"><br>
             <input name="endTime" placeholder="ENDTIME"><br>
             <input name="scales" placeholder="SCALES"><br>
-            <input name="accountant" placeholder="ACCOUNTANT"><br>
+            <select name ="accountant">
+                <option value="user1">user1</option>
+                <option value="user2">user2</option>
+                <option value="user3">user3</option>
+                <option value="xiaohj">xiaohj</option>
+            </select>
             <input type="submit" value="ADD">
         </form>
     </body>
